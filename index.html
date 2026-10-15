@@ -1,0 +1,2802 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tumakuru (Tumkur) — The Kalpataru Nadu & Smart Knowledge City</title>
+  <meta name="description" content="Discover Tumakuru (Tumkur), Karnataka: The Land of Coconuts, Spiritual Legacy of Siddaganga Mutt, Asia's Largest Monolith at Madhugiri, DD Hills, and Karnataka's vibrant industrial smart city.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       CSS Custom Properties / Design Tokens
+       ========================================================================== */
+    :root {
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-heritage: 'Rozha One', serif;
+
+      /* Dark Theme (Default) */
+      --bg-primary: #0a0e17;
+      --bg-secondary: #111827;
+      --bg-card: rgba(19, 27, 43, 0.75);
+      --bg-card-hover: rgba(28, 38, 59, 0.85);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(245, 158, 11, 0.35);
+
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+
+      /* Accents */
+      --amber: #f59e0b;
+      --amber-glow: rgba(245, 158, 11, 0.25);
+      --saffron: #f97316;
+      --emerald: #10b981;
+      --emerald-glow: rgba(16, 185, 129, 0.2);
+      --sky: #0ea5e9;
+      --purple: #8b5cf6;
+
+      --glass-bg: rgba(15, 23, 42, 0.8);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --glass-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+
+      --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-card: rgba(255, 255, 255, 0.85);
+      --bg-card-hover: rgba(255, 255, 255, 0.98);
+      --border-color: rgba(0, 0, 0, 0.08);
+      --border-hover: rgba(245, 158, 11, 0.5);
+
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+
+      --amber: #d97706;
+      --amber-glow: rgba(217, 119, 6, 0.15);
+      --saffron: #ea580c;
+      --emerald: #059669;
+      --emerald-glow: rgba(5, 150, 105, 0.15);
+
+      --glass-bg: rgba(255, 255, 255, 0.85);
+      --glass-border: rgba(0, 0, 0, 0.08);
+      --glass-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    /* ==========================================================================
+       Reset & Base Styles
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background-color var(--transition-normal), color var(--transition-normal);
+      position: relative;
+    }
+
+    /* Subtle background grid pattern */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(245, 158, 11, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 75%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    button, input, select {
+      font-family: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ==========================================================================
+       Navigation Bar
+       ========================================================================== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: var(--glass-bg);
+      border-bottom: 1px solid var(--border-color);
+      transition: all var(--transition-fast);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+    }
+
+    .logo-emblem {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #f59e0b, #ea580c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: 0 4px 14px var(--amber-glow);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      line-height: 1.1;
+      background: linear-gradient(120deg, var(--text-primary) 60%, var(--amber));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-kannada {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--amber);
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      transition: color var(--transition-fast);
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--amber);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--amber);
+      transition: width var(--transition-fast);
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .theme-toggle {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--amber);
+      transform: rotate(15deg);
+      box-shadow: 0 0 12px var(--amber-glow);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    /* ==========================================================================
+       Hero Section
+       ========================================================================== */
+    .hero {
+      position: relative;
+      padding: 4.5rem 0 3.5rem;
+      overflow: hidden;
+    }
+
+    .hero-glow-1 {
+      position: absolute;
+      top: -10%;
+      right: -5%;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, transparent 70%);
+      filter: blur(50px);
+      pointer-events: none;
+    }
+
+    .hero-glow-2 {
+      position: absolute;
+      bottom: 0;
+      left: -5%;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+      filter: blur(60px);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 3.5rem;
+    }
+
+    .hero-badge-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 8px var(--emerald);
+      animation: pulseDot 2s infinite;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    .badge-text {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--amber);
+      letter-spacing: 0.02em;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      font-weight: 900;
+      line-height: 1.08;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-title-highlight {
+      background: linear-gradient(135deg, #f59e0b 0%, #f97316 50%, #e11d48 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-lead {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      max-width: 580px;
+      line-height: 1.7;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 0.98rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--amber), var(--saffron));
+      color: #0f172a;
+      box-shadow: 0 6px 20px var(--amber-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(245, 158, 11, 0.35);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      border-color: var(--border-color);
+      color: var(--text-primary);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--amber);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Showcase Graphic Card */
+    .hero-visual-card {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      backdrop-filter: blur(16px);
+      box-shadow: var(--glass-shadow);
+      transition: transform var(--transition-normal);
+    }
+
+    .hero-visual-card:hover {
+      border-color: var(--border-hover);
+    }
+
+    .scenic-canvas {
+      width: 100%;
+      height: 320px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(180deg, #091224 0%, #1e293b 60%, #064e3b 100%);
+      box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Vector SVG composition inside scenic card */
+    .scenic-svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero-floating-tag {
+      position: absolute;
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius-md);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tag-top-right {
+      top: 10px;
+      right: 10px;
+    }
+
+    .tag-bottom-left {
+      bottom: 24px;
+      left: 20px;
+    }
+
+    .tag-icon-wrap {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    /* Key Statistics Bar */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-top: 1rem;
+      padding: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(14px);
+    }
+
+    .stat-item {
+      text-align: center;
+      position: relative;
+    }
+
+    .stat-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 15%;
+      height: 70%;
+      width: 1px;
+      background: var(--border-color);
+    }
+
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--amber);
+      line-height: 1.1;
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       Section Utilities & Headers
+       ========================================================================== */
+    .section {
+      padding: 5rem 0;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--amber);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .section-description {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+    }
+
+    /* ==========================================================================
+       City Pillars (Identity / 4 Pillars of Tumakuru)
+       ========================================================================== */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .pillar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      transition: all var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--card-accent, var(--amber)), transparent);
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-hover);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+    }
+
+    .pillar-card:hover::before {
+      opacity: 1;
+    }
+
+    .pillar-icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      background: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .pillar-title {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .pillar-text {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .pillar-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .mini-pill {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius-full);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+    }
+
+    /* ==========================================================================
+       Interactive Attractions Explorer & Filters
+       ========================================================================== */
+    .controls-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .filter-btn {
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--radius-full);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .filter-btn:hover {
+      color: var(--text-primary);
+      border-color: var(--amber);
+    }
+
+    .filter-btn.active {
+      background: var(--amber);
+      border-color: var(--amber);
+      color: #0f172a;
+      box-shadow: 0 4px 14px var(--amber-glow);
+    }
+
+    .search-input-box {
+      position: relative;
+      min-width: 260px;
+    }
+
+    .search-input-box input {
+      width: 100%;
+      padding: 0.65rem 1rem 0.65rem 2.6rem;
+      border-radius: var(--radius-full);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      outline: none;
+      transition: all var(--transition-fast);
+    }
+
+    .search-input-box input:focus {
+      border-color: var(--amber);
+      box-shadow: 0 0 12px var(--amber-glow);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .attractions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    .attraction-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-normal);
+      cursor: pointer;
+    }
+
+    .attraction-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-hover);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .card-banner {
+      height: 190px;
+      position: relative;
+      overflow: hidden;
+      background: #1e293b;
+    }
+
+    .card-banner svg {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .attraction-card:hover .card-banner svg {
+      transform: scale(1.05);
+    }
+
+    .badge-category {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-distance {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      color: #fbbf24;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .card-kannada {
+      font-size: 0.82rem;
+      color: var(--amber);
+      font-weight: 600;
+      margin-bottom: 0.65rem;
+    }
+
+    .card-summary {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .card-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-color);
+      padding-top: 1rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .card-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .card-btn-action {
+      color: var(--amber);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap var(--transition-fast);
+    }
+
+    .attraction-card:hover .card-btn-action {
+      gap: 8px;
+    }
+
+    /* ==========================================================================
+       Special Heritage Section: Siddaganga Mutt & Swamiji
+       ========================================================================== */
+    .legacy-banner {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(249, 115, 22, 0.08) 50%, rgba(139, 92, 246, 0.06) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem;
+      position: relative;
+      overflow: hidden;
+      margin: 2rem 0;
+    }
+
+    .legacy-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .legacy-quote {
+      font-family: var(--font-heritage);
+      font-size: 1.8rem;
+      color: var(--amber);
+      line-height: 1.35;
+      margin-bottom: 1rem;
+    }
+
+    .legacy-text {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .dasoha-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .dasoha-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1rem;
+      text-align: center;
+    }
+
+    .dasoha-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .dasoha-desc {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    .mutt-stat-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--amber);
+      margin-top: 1.5rem;
+    }
+
+    /* ==========================================================================
+       Culinary Highlights: Tumkur Thatte Idli
+       ========================================================================== */
+    .culinary-wrapper {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .culinary-info {
+      padding: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .culinary-dish-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin: 1.75rem 0;
+    }
+
+    .dish-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .dish-bullet {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--amber-glow);
+      color: var(--amber);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .dish-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text-primary);
+    }
+
+    .dish-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+
+    .culinary-visual {
+      background: linear-gradient(135deg, #1c1917 0%, #292524 100%);
+      padding: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .thatte-idli-plate {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #e2e8f0 30%, #cbd5e1 70%, #94a3b8 100%);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 2px 10px rgba(255, 255, 255, 0.8);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .idli-steamed {
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ffffff 60%, #f1f5f9 100%);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .butter-dollop {
+      width: 48px;
+      height: 40px;
+      background: #fbbf24;
+      border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+      box-shadow: 0 4px 10px rgba(245, 158, 11, 0.4);
+      position: relative;
+      animation: meltButter 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes meltButter {
+      0% { transform: scale(1) rotate(0deg); }
+      100% { transform: scale(1.08) rotate(4deg); }
+    }
+
+    .chutney-bowl-1 {
+      position: absolute;
+      top: 10px;
+      right: -20px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #86efac 40%, #15803d 100%);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      border: 3px solid #f8fafc;
+    }
+
+    .chutney-bowl-2 {
+      position: absolute;
+      bottom: 10px;
+      left: -20px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #f87171 40%, #b91c1c 100%);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      border: 3px solid #f8fafc;
+    }
+
+    /* ==========================================================================
+       Interactive Travel Planner & Route Matrix
+       ========================================================================== */
+    .transit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .calculator-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+    }
+
+    .calc-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .calc-desc {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .calc-select {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border-radius: var(--radius-md);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color var(--transition-fast);
+    }
+
+    .calc-select:focus {
+      border-color: var(--amber);
+    }
+
+    .calc-result-card {
+      margin-top: 1.5rem;
+      padding: 1.25rem;
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: var(--radius-md);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      text-align: center;
+    }
+
+    .calc-stat-val {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--amber);
+    }
+
+    .calc-stat-lbl {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .transit-modes {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .transit-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      transition: border-color var(--transition-fast);
+    }
+
+    .transit-item:hover {
+      border-color: var(--amber);
+    }
+
+    .transit-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      border: 1px solid var(--border-color);
+    }
+
+    .transit-heading {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .transit-text {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       Interactive Trivia Quiz
+       ========================================================================== */
+    .quiz-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      max-width: 820px;
+      margin: 0 auto;
+      box-shadow: var(--glass-shadow);
+    }
+
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .quiz-badge {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--amber);
+      background: var(--amber-glow);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+    }
+
+    .quiz-score-badge {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--emerald);
+    }
+
+    .quiz-question-text {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.35;
+    }
+
+    .quiz-options-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .quiz-option {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      font-size: 0.98rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all var(--transition-fast);
+      text-align: left;
+      width: 100%;
+    }
+
+    .quiz-option:hover:not(:disabled) {
+      border-color: var(--amber);
+      background: var(--bg-card-hover);
+      transform: translateX(4px);
+    }
+
+    .quiz-option.correct {
+      border-color: var(--emerald) !important;
+      background: rgba(16, 185, 129, 0.15) !important;
+      color: var(--emerald) !important;
+    }
+
+    .quiz-option.incorrect {
+      border-color: #ef4444 !important;
+      background: rgba(239, 68, 68, 0.15) !important;
+      color: #ef4444 !important;
+    }
+
+    .quiz-feedback {
+      min-height: 38px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* ==========================================================================
+       Modal View for Attraction Details
+       ========================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(10px);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition-normal);
+    }
+
+    .modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-dialog {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      max-width: 720px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+      transform: scale(0.95);
+      transition: transform var(--transition-normal);
+      position: relative;
+    }
+
+    .modal-backdrop.active .modal-dialog {
+      transform: scale(1);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: all var(--transition-fast);
+    }
+
+    .modal-close-btn:hover {
+      background: var(--amber);
+      color: #000;
+      transform: scale(1.1);
+    }
+
+    .modal-media-header {
+      height: 240px;
+      position: relative;
+      background: #1e293b;
+    }
+
+    .modal-media-header svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .modal-body {
+      padding: 2.25rem;
+    }
+
+    .modal-tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--amber);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-title {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+    }
+
+    .modal-kannada {
+      color: var(--amber);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .modal-description {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1.75rem;
+    }
+
+    .modal-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .modal-info-col h4 {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+
+    .modal-info-col p {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    /* ==========================================================================
+       Footer
+       ========================================================================== */
+    .site-footer {
+      border-top: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      padding: 4.5rem 0 2.5rem;
+      margin-top: 5rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-desc {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+      color: var(--text-primary);
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      transition: color var(--transition-fast);
+    }
+
+    .footer-links a:hover {
+      color: var(--amber);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-color);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       Responsive Media Queries
+       ========================================================================== */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .legacy-grid {
+        grid-template-columns: 1fr;
+      }
+      .culinary-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .transit-grid {
+        grid-template-columns: 1fr;
+      }
+      .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .stat-item:nth-child(2)::after {
+        display: none;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .nav-links.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--bg-secondary);
+        border-bottom: 1px solid var(--border-color);
+        padding: 1.5rem;
+        gap: 1rem;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .legacy-banner {
+        padding: 2rem 1.5rem;
+      }
+      .dasoha-cards {
+        grid-template-columns: 1fr;
+      }
+      .culinary-info {
+        padding: 2rem 1.5rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+      .modal-info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       Top Navigation
+       ======================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#hero" class="brand-logo" id="brand-link">
+        <div class="logo-emblem">
+          <!-- Coconut tree & temple emblem SVG -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">TUMAKURU</span>
+          <span class="brand-kannada">ಕಲ್ಪತರು ನಾಡು • ತುಮಕೂರು</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#pillars">Identity</a></li>
+        <li><a href="#attractions">Attractions</a></li>
+        <li><a href="#siddaganga">Siddaganga Legacy</a></li>
+        <li><a href="#culinary">Cuisine</a></li>
+        <li><a href="#transit">Reach Here</a></li>
+        <li><a href="#quiz">City Quiz</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" title="Toggle Light/Dark Theme" aria-label="Toggle theme">
+          <svg id="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <a href="#attractions" class="btn btn-primary" style="padding: 0.55rem 1.15rem; font-size: 0.88rem;">
+          Explore City
+        </a>
+
+        <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Open Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       Hero Section
+       ======================================================================== -->
+  <section class="hero" id="hero">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge-wrap">
+            <span class="badge-dot"></span>
+            <span class="badge-text">Karnataka's Gateway Smart City • ಕಲ್ಪತರು ನಾಡು</span>
+          </div>
+
+          <h1 class="hero-title">
+            Where Sacred Heritage Meets <span class="hero-title-highlight">Modern Innovation</span>
+          </h1>
+
+          <p class="hero-lead">
+            Welcome to Tumakuru (Tumkur) — the famed <strong>"Kalpataru Nadu"</strong> (Land of Coconuts). Home to the world-renowned Siddaganga Mutt, Asia's colossal monolith at Madhugiri, tranquil Devarayanadurga hills, and world-leading solar and manufacturing hubs.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#attractions" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+              </svg>
+              Discover Top Spots
+            </a>
+            <a href="#transit" class="btn btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Travel & Routes (70km from BLR)
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual Scenic Card -->
+        <div class="hero-visual-card">
+          <div class="scenic-canvas">
+            <svg class="scenic-svg" viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#0f172a" />
+                  <stop offset="40%" stop-color="#1e293b" />
+                  <stop offset="70%" stop-color="#334155" />
+                  <stop offset="100%" stop-color="#b45309" />
+                </linearGradient>
+                <linearGradient id="sunGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#fbbf24" />
+                  <stop offset="100%" stop-color="#f97316" />
+                </linearGradient>
+                <linearGradient id="hillGrad1" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#334155" />
+                  <stop offset="100%" stop-color="#0f172a" />
+                </linearGradient>
+                <linearGradient id="hillGrad2" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#1e3a1f" />
+                  <stop offset="100%" stop-color="#062e15" />
+                </linearGradient>
+              </defs>
+
+              <!-- Sky background -->
+              <rect width="500" height="320" fill="url(#skyGrad)" />
+
+              <!-- Morning Sun over DD Hills -->
+              <circle cx="250" cy="120" r="45" fill="url(#sunGrad)" opacity="0.9" />
+
+              <!-- Distant Monolith & Hills (Madhugiri & Devarayanadurga Silhouette) -->
+              <path d="M0,230 Q60,140 140,170 T300,160 Q380,110 500,210 L500,320 L0,320 Z" fill="url(#hillGrad1)" opacity="0.8" />
+
+              <!-- Forefront Hill with Devarayanadurga Temple Gopuram Outline -->
+              <path d="M0,260 Q110,190 220,240 T440,220 Q480,210 500,250 L500,320 L0,320 Z" fill="url(#hillGrad2)" />
+
+              <!-- Temple Shikhara/Gopuram on peak -->
+              <path d="M210,240 L220,215 L230,240 Z" fill="#fbbf24" />
+              <rect x="218" y="210" width="4" height="6" fill="#f59e0b" />
+              <circle cx="220" cy="208" r="2.5" fill="#fef08a" />
+
+              <!-- Coconut Palms (Kalpataru) -->
+              <path d="M60,320 Q65,260 70,230" stroke="#78350f" stroke-width="4" fill="none" />
+              <circle cx="70" cy="230" r="3" fill="#15803d" />
+              <!-- Palm leaves -->
+              <path d="M70,230 Q45,215 35,225 M70,230 Q80,210 100,220 M70,230 Q50,240 40,250 M70,230 Q85,245 95,255 M70,230 Q70,205 70,200" stroke="#16a34a" stroke-width="2.5" fill="none" stroke-linecap="round" />
+
+              <!-- Second Palm tree -->
+              <path d="M420,320 Q410,250 405,220" stroke="#78350f" stroke-width="3.5" fill="none" />
+              <path d="M405,220 Q380,205 370,215 M405,220 Q425,200 440,210 M405,220 Q385,230 380,242 M405,220 Q425,235 435,245" stroke="#16a34a" stroke-width="2" fill="none" stroke-linecap="round" />
+
+              <!-- Modern Solar Grid Motif at Base (Pavagada Solar Park representation) -->
+              <g opacity="0.6">
+                <polygon points="290,295 330,295 340,315 295,315" fill="#0284c7" stroke="#38bdf8" stroke-width="0.8" />
+                <polygon points="335,295 375,295 390,315 345,315" fill="#0284c7" stroke="#38bdf8" stroke-width="0.8" />
+                <polygon points="380,295 420,295 438,315 395,315" fill="#0284c7" stroke="#38bdf8" stroke-width="0.8" />
+              </g>
+            </svg>
+
+            <!-- Floating Overlay Badges -->
+            <div class="hero-floating-tag tag-top-right">
+              <div class="tag-icon-wrap" style="background: rgba(245, 158, 11, 0.2); color: #f59e0b;">
+                ☀️
+              </div>
+              <div>
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-primary);">Pavagada Solar</div>
+                <div style="font-size: 0.68rem; color: var(--text-secondary);">2,050 MW Clean Energy</div>
+              </div>
+            </div>
+
+            <div class="hero-floating-tag tag-bottom-left">
+              <div class="tag-icon-wrap" style="background: rgba(16, 185, 129, 0.2); color: #10b981;">
+                ⛰️
+              </div>
+              <div>
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-primary);">Madhugiri Monolith</div>
+                <div style="font-size: 0.68rem; color: var(--text-secondary);">2nd Largest in Asia (3,930 ft)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Bar -->
+      <div class="stats-bar" id="overview">
+        <div class="stat-item">
+          <div class="stat-number">~70 km</div>
+          <div class="stat-label">From Bengaluru City via NH-48</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">822 m</div>
+          <div class="stat-label">Elevation / Pleasant Climate</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">300+</div>
+          <div class="stat-label">Colleges & Educational Hubs</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">13,000+</div>
+          <div class="stat-label">Acres World-Class Solar Park</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       City Pillars / The 4 Dimensions of Tumakuru
+       ======================================================================== -->
+  <section class="section" id="pillars">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Key Characteristics</span>
+        <h2 class="section-title">The Four Pillars of Tumakuru</h2>
+        <p class="section-description">
+          A unique confluence of agricultural abundance, deep humanitarian spirituality, educational prowess, and futuristic manufacturing corridors.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <!-- Pillar 1: Kalpataru Nadu -->
+        <div class="pillar-card" style="--card-accent: #10b981;">
+          <div class="pillar-icon-box">🥥</div>
+          <h3 class="pillar-title">Kalpataru Nadu</h3>
+          <p class="pillar-text">
+            Tumakuru is globally recognized as the "Land of the Wish-granting Coconut Trees". Thousands of hectares of lush green plantations produce world-renowned coconuts, tender coconut water, and copra trade markets in Tiptur.
+          </p>
+          <div class="pillar-pills">
+            <span class="mini-pill">Tiptur Copra Hub</span>
+            <span class="mini-pill">Coir Industry</span>
+            <span class="mini-pill">Lush Groves</span>
+          </div>
+        </div>
+
+        <!-- Pillar 2: Vidyanagari (Education Capital) -->
+        <div class="pillar-card" style="--card-accent: #3b82f6;">
+          <div class="pillar-icon-box">🎓</div>
+          <h3 class="pillar-title">Vidyanagari</h3>
+          <p class="pillar-text">
+            Celebrated as an educational sanctuary with top-tier universities, medical colleges, and engineering powerhouses such as SIT (Siddaganga Institute of Technology), Tumkur University, and Sri Siddhartha Academy.
+          </p>
+          <div class="pillar-pills">
+            <span class="mini-pill">SIT Campus</span>
+            <span class="mini-pill">Tumkur University</span>
+            <span class="mini-pill">Medical & Tech</span>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Spiritual & Humanitarian -->
+        <div class="pillar-card" style="--card-accent: #f59e0b;">
+          <div class="pillar-icon-box">🛕</div>
+          <h3 class="pillar-title">Spiritual Sanctuary</h3>
+          <p class="pillar-text">
+            The seat of sacred compassion championed by Dr. Sri Sri Shivakumara Swamiji. Ancient Hoysala architecture at Kaidala, Devarayanadurga hill temples, and historic cave retreats like Siddara Betta offer deep solace.
+          </p>
+          <div class="pillar-pills">
+            <span class="mini-pill">Siddaganga Mutt</span>
+            <span class="mini-pill">Devarayanadurga</span>
+            <span class="mini-pill">Jakanachari Legacy</span>
+          </div>
+        </div>
+
+        <!-- Pillar 4: Industrial & Smart City Node -->
+        <div class="pillar-card" style="--card-accent: #8b5cf6;">
+          <div class="pillar-icon-box">⚡</div>
+          <h3 class="pillar-title">Smart Industrial Node</h3>
+          <p class="pillar-text">
+            As a prime node of the Chennai-Bengaluru-Mumbai Industrial Corridor (CBIC), Tumakuru hosts Vasanthanarasapura Industrial Mega Park, the India Food Park, aerospace ventures, and high-speed multi-lane transit.
+          </p>
+          <div class="pillar-pills">
+            <span class="mini-pill">CBIC Corridor</span>
+            <span class="mini-pill">Pavagada Solar</span>
+            <span class="mini-pill">Food Park</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Top Attractions Explorer with Live Filter & Search
+       ======================================================================== -->
+  <section class="section" id="attractions">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Destinations & Heritage</span>
+        <h2 class="section-title">Iconic Wonders & Destinations</h2>
+        <p class="section-description">
+          From Asia's monolith fort to serene hill stations and centuries-old Hoysala temples, discover the crown jewels of Tumakuru district.
+        </p>
+      </div>
+
+      <!-- Controls: Category Tabs & Realtime Search -->
+      <div class="controls-wrapper">
+        <div class="filter-tabs" id="filter-tabs">
+          <button class="filter-btn active" data-filter="all">All Sights (8)</button>
+          <button class="filter-btn" data-filter="trekking">Nature & Trekking</button>
+          <button class="filter-btn" data-filter="spiritual">Sacred & Spiritual</button>
+          <button class="filter-btn" data-filter="heritage">Architecture & Heritage</button>
+          <button class="filter-btn" data-filter="modern">Modern Marvels</button>
+        </div>
+
+        <div class="search-input-box">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="attraction-search" placeholder="Search hill, mutt, monolith..." aria-label="Search attractions">
+        </div>
+      </div>
+
+      <!-- Attractions Cards Grid -->
+      <div class="attractions-grid" id="attractions-grid">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Siddaganga Mutt Legacy & The "Walking God"
+       ======================================================================== -->
+  <section class="section" id="siddaganga">
+    <div class="container">
+      <div class="legacy-banner">
+        <div class="legacy-grid">
+          <div>
+            <span class="section-tag">Sacred Humanitarian Heritage</span>
+            <h2 class="section-title" style="margin-bottom: 0.5rem;">Sri Siddaganga Mutt</h2>
+            <div class="legacy-quote">
+              "Kayakave Kailasa — Work is Worship"
+            </div>
+            <p class="legacy-text">
+              Sri Siddaganga Mutt is a revered centuries-old Lingayat monastic institution situated on a rocky hill just 5 km east of Tumakuru city. The mutt was sanctified and brought to global prominence by Karnataka's beloved centenarian saint, <strong>Padma Bhushan Dr. Sri Sri Sri Shivakumara Swamiji</strong> (1907–2019), venerated as the "Walking God" (Nadedaduva Devaru).
+            </p>
+
+            <div class="dasoha-cards">
+              <div class="dasoha-box">
+                <div style="font-size: 1.5rem;">🍚</div>
+                <div class="dasoha-title">Anna Dasoha</div>
+                <div class="dasoha-desc">Free nutritious meals served daily to 10,000+ students & pilgrims without distinction.</div>
+              </div>
+              <div class="dasoha-box">
+                <div style="font-size: 1.5rem;">📖</div>
+                <div class="dasoha-title">Akshara Dasoha</div>
+                <div class="dasoha-desc">Free quality primary to post-graduate education uplifting poor and rural youth.</div>
+              </div>
+              <div class="dasoha-box">
+                <div style="font-size: 1.5rem;">🏡</div>
+                <div class="dasoha-title">Ashraya Dasoha</div>
+                <div class="dasoha-desc">Free safe accommodation and shelter provided regardless of caste or creed.</div>
+              </div>
+            </div>
+
+            <div class="mutt-stat-badge">
+              <span>🌟 Over 10,000 children nurtured daily with education, food, and hostel facilities.</span>
+            </div>
+          </div>
+
+          <!-- Stylized Mutt Visual -->
+          <div style="display: flex; justify-content: center;">
+            <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem; width: 100%; max-width: 360px; text-align: center; box-shadow: var(--glass-shadow);">
+              <svg viewBox="0 0 300 240" style="width: 100%; height: 200px; border-radius: 12px; margin-bottom: 1rem; background: #1a1714;">
+                <defs>
+                  <linearGradient id="muttGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#ea580c"/>
+                    <stop offset="100%" stop-color="#78350f"/>
+                  </linearGradient>
+                </defs>
+                <!-- Sun Halo -->
+                <circle cx="150" cy="90" r="50" fill="#f59e0b" opacity="0.3"/>
+                <circle cx="150" cy="90" r="35" fill="#f59e0b" opacity="0.5"/>
+                <!-- Temple Dome / Gopuram silhouette -->
+                <path d="M120,180 L150,80 L180,180 Z" fill="url(#muttGrad)"/>
+                <rect x="146" y="60" width="8" height="20" fill="#fbbf24"/>
+                <circle cx="150" cy="55" r="4" fill="#fef08a"/>
+                <!-- Kalasha -->
+                <path d="M80,190 L220,190 L230,220 L70,220 Z" fill="#292524"/>
+                <circle cx="150" cy="140" r="10" fill="#fbbf24"/>
+              </svg>
+              <h4 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: var(--amber);">
+                Dr. Sri Sri Shivakumara Swamiji
+              </h4>
+              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 4px;">
+                Trividha Dasohi • Lived 111 Years in Selfless Service to Humanity
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Culinary Culture: Tumkur Thatte Idli
+       ======================================================================== -->
+  <section class="section" id="culinary">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Flavors of Kalpataru Nadu</span>
+        <h2 class="section-title">The Legendary Thatte Idli & Food Trail</h2>
+        <p class="section-description">
+          No journey to or through Tumakuru is complete without savoring its soft, cloud-like plate idlis bathed in fragrant coconut chutney.
+        </p>
+      </div>
+
+      <div class="culinary-wrapper">
+        <div class="culinary-info">
+          <span class="section-tag" style="margin-bottom: 0.25rem;">Iconic Breakfast Tradition</span>
+          <h3 style="font-family: var(--font-heading); font-size: 2rem; font-weight: 800; margin-bottom: 0.75rem;">
+            Tumakuru Thatte Idli (ತಟ್ಟೆ ಇಡ್ಲಿ)
+          </h3>
+          <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.98rem;">
+            Steamed in wide, flat circular clay/metal plates (<em>Thatte</em> in Kannada), these idlis are famously pillowy, porous, and super soft. Served hot with a generous scoop of home-churned butter (<em>Benne</em>), spicy red coconut chutney, and podi.
+          </p>
+
+          <div class="culinary-dish-list">
+            <div class="dish-item">
+              <div class="dish-bullet">1</div>
+              <div>
+                <div class="dish-name">Kalyani & Shivanna Thatte Idli Hubs</div>
+                <div class="dish-desc">Historic eateries along the highway and city centre that have served generations of travelers.</div>
+              </div>
+            </div>
+
+            <div class="dish-item">
+              <div class="dish-bullet">2</div>
+              <div>
+                <div class="dish-name">Crispy Uddin Vada & Ghee Podi</div>
+                <div class="dish-desc">Golden crisp exterior with an airy soft interior, dipped in freshly ground coconut chutney.</div>
+              </div>
+            </div>
+
+            <div class="dish-item">
+              <div class="dish-bullet">3</div>
+              <div>
+                <div class="dish-name">Fresh Kalpataru Tender Coconut</div>
+                <div class="dish-desc">Naturally sweet, electrolyte-rich tender coconut water straight from nearby Tiptur farms.</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--amber);">
+              ☕ Pair with authentic Tumakuru Filter Kaapi for the complete experience!
+            </div>
+          </div>
+        </div>
+
+        <div class="culinary-visual">
+          <!-- Stylized Thatte Idli Plate Graphic -->
+          <div class="thatte-idli-plate">
+            <div class="idli-steamed">
+              <div class="butter-dollop"></div>
+            </div>
+            <!-- Chutney Bowls -->
+            <div class="chutney-bowl-1" title="Fresh Coconut Chutney"></div>
+            <div class="chutney-bowl-2" title="Spicy Red Chilly Chutney"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Interactive Distance & Transit Calculator
+       ======================================================================== -->
+  <section class="section" id="transit">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Connectivity & Logistics</span>
+        <h2 class="section-title">Getting to Tumakuru</h2>
+        <p class="section-description">
+          Located strategically on National Highway 48 (NH-48), Tumakuru serves as the north-western gateway to Bengaluru and the heart of southern India.
+        </p>
+      </div>
+
+      <div class="transit-grid">
+        <!-- Interactive Distance Calculator -->
+        <div class="calculator-box">
+          <h3 class="calc-title">Interactive Travel Calculator</h3>
+          <p class="calc-desc">Select your starting city to calculate distance, drive time, and optimal transit route to Tumakuru.</p>
+
+          <div class="form-group">
+            <label class="form-label" for="city-select">Select Starting Point:</label>
+            <select class="calc-select" id="city-select">
+              <option value="bangalore">Bengaluru (Majestic / CBD) — 70 km</option>
+              <option value="airport">Kempegowda Int'l Airport (BLR) — 80 km</option>
+              <option value="mysuru">Mysuru (via Nelamangala / Hassan Rd) — 150 km</option>
+              <option value="chitradurga">Chitradurga (via NH-48) — 130 km</option>
+              <option value="hubli">Hubballi / Dharwad (via NH-48) — 340 km</option>
+              <option value="shivammoga">Shivamogga (via Tarikere / Arsikere) — 200 km</option>
+            </select>
+          </div>
+
+          <div class="calc-result-card" id="calc-result">
+            <div>
+              <div class="calc-stat-val" id="res-distance">70 km</div>
+              <div class="calc-stat-lbl">Distance</div>
+            </div>
+            <div>
+              <div class="calc-stat-val" id="res-time">1 hr 15m</div>
+              <div class="calc-stat-lbl">Drive Time</div>
+            </div>
+            <div>
+              <div class="calc-stat-val" id="res-route">NH-48 Exp</div>
+              <div class="calc-stat-lbl">Primary Route</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.25rem; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;" id="res-tip">
+            💡 <em>Tip: Travel via the 6-lane Bengaluru-Tumakuru expressway or catch frequent fast express trains running every 20-30 minutes.</em>
+          </div>
+        </div>
+
+        <!-- Connectivity Modes -->
+        <div class="transit-modes">
+          <div class="transit-item">
+            <div class="transit-icon">🚆</div>
+            <div>
+              <h4 class="transit-heading">Tumakuru Railway Junction (TK)</h4>
+              <p class="transit-text">
+                A major junction on South Western Railway. Vande Bharat, Intercity, and Jan Shatabdi express trains connect daily with Bengaluru, Hubballi, Mumbai, and Belagavi in ~1 hour.
+              </p>
+            </div>
+          </div>
+
+          <div class="transit-item">
+            <div class="transit-icon">🚌</div>
+            <div>
+              <h4 class="transit-heading">Express Highway (NH-48) & KSRTC</h4>
+              <p class="transit-text">
+                Direct 6-lane elevated highway from Peenya/Yeshwantpur. Non-stop KSRTC Airavat, EV-Powerplus, and Flybus airport shuttles operate round the clock.
+              </p>
+            </div>
+          </div>
+
+          <div class="transit-item">
+            <div class="transit-icon">✈️</div>
+            <div>
+              <h4 class="transit-heading">Kempegowda International Airport</h4>
+              <p class="transit-text">
+                Just ~80 km away. Connected smoothly via Dobbaspet / STRR (Satellite Town Ring Road), bypassing inner Bengaluru city traffic in approximately 85 minutes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Interactive Trivia Quiz: "How Well Do You Know Tumakuru?"
+       ======================================================================== -->
+  <section class="section" id="quiz">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Interactive Knowledge Challenge</span>
+        <h2 class="section-title">How Well Do You Know Tumakuru?</h2>
+        <p class="section-description">
+          Test your knowledge about the Land of Coconuts, historical monoliths, and legendary figures.
+        </p>
+      </div>
+
+      <div class="quiz-container">
+        <div class="quiz-header">
+          <span class="quiz-badge" id="quiz-question-counter">Question 1 of 4</span>
+          <span class="quiz-score-badge" id="quiz-score-display">Score: 0 / 4</span>
+        </div>
+
+        <h3 class="quiz-question-text" id="quiz-question-text">
+          Loading question...
+        </h3>
+
+        <div class="quiz-options-list" id="quiz-options-container">
+          <!-- Quiz options injected here -->
+        </div>
+
+        <div class="quiz-feedback" id="quiz-feedback"></div>
+
+        <div class="quiz-footer">
+          <span style="font-size: 0.85rem; color: var(--text-muted);" id="quiz-hint-text">
+            Choose an answer to reveal fascinating trivia!
+          </span>
+          <button class="btn btn-primary" id="quiz-next-btn" style="display: none;">
+            Next Question →
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Attraction Detail Modal
+       ======================================================================== -->
+  <div class="modal-backdrop" id="attraction-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog">✕</button>
+      
+      <div class="modal-media-header" id="modal-banner">
+        <!-- SVG graphic dynamically placed here -->
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-tag" id="modal-category">CATEGORY</div>
+        <h3 class="modal-title" id="modal-name">Attraction Title</h3>
+        <div class="modal-kannada" id="modal-kannada">ಕನ್ನಡ ಹೆಸರು</div>
+
+        <div class="modal-info-grid">
+          <div class="modal-info-col">
+            <h4>Distance</h4>
+            <p id="modal-dist">From Tumkur City</p>
+          </div>
+          <div class="modal-info-col">
+            <h4>Best Timing</h4>
+            <p id="modal-time">Oct to Feb</p>
+          </div>
+          <div class="modal-info-col">
+            <h4>Highlight</h4>
+            <p id="modal-highlight">Scenic Trek</p>
+          </div>
+        </div>
+
+        <p class="modal-description" id="modal-long-desc">
+          Detailed historical context, trekking advice, spiritual significance, and visitation details appear here.
+        </p>
+
+        <div style="display: flex; justify-content: flex-end; gap: 10px;">
+          <button class="btn btn-secondary" id="modal-close-bottom">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       Footer
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-logo" style="margin-bottom: 0.75rem;">
+            <div class="logo-emblem">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-title">TUMAKURU</span>
+              <span class="brand-kannada">ಕಲ್ಪತರು ನಾಡು</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            An overview portal celebrating the soul, heritage, tourism, culture, and thriving future of Tumakuru (Tumkur) district, Karnataka, India.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Major Highlights</h4>
+          <ul class="footer-links">
+            <li><a href="#attractions">Devarayanadurga Hills</a></li>
+            <li><a href="#attractions">Madhugiri Monolith Fort</a></li>
+            <li><a href="#siddaganga">Sri Siddaganga Mutt</a></li>
+            <li><a href="#attractions">Pavagada Solar Park</a></li>
+            <li><a href="#attractions">Kaidala Chennakeshava</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Useful Sections</h4>
+          <ul class="footer-links">
+            <li><a href="#overview">City Key Metrics</a></li>
+            <li><a href="#pillars">Four Pillars</a></li>
+            <li><a href="#culinary">Thatte Idli Food Trail</a></li>
+            <li><a href="#transit">Travel Calculator</a></li>
+            <li><a href="#quiz">Tumkur Trivia Quiz</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Did You Know?</h4>
+          <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6; margin-bottom: 1rem;">
+            Madhugiri Fort is built on Asia's second largest monolithic rock, and the Pavagada Solar Park ranks among the largest single-location photovoltaic plants on Earth!
+          </p>
+          <div style="font-size: 0.82rem; color: var(--amber); font-weight: 600;">
+            📍 Tumkur Smart City Limited (TSCL)
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="current-year">2026</span> Tumakuru City Showcase. Crafted with inline modern HTML &amp; CSS.
+        </div>
+        <div style="display: flex; gap: 1rem;">
+          <span>Smart City</span>
+          <span>•</span>
+          <span>Kalpataru Nadu</span>
+          <span>•</span>
+          <span>Gateway of Karnataka</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       Vanilla JavaScript for Dynamic Explorer, Quiz, Calculator, Theme
+       ======================================================================== -->
+  <script>
+    // ========================================================================
+    // Data: Iconic Attractions of Tumakuru
+    // ========================================================================
+    const ATTRACTIONS_DATA = [
+      {
+        id: "dd-hills",
+        name: "Devarayanadurga (DD Hills)",
+        kannada: "ದೇವರಾಯನದುರ್ಗ",
+        category: "trekking",
+        categoryLabel: "Nature & Trekking",
+        distance: "16 km from City",
+        elevation: "1,204 m / 3,950 ft",
+        highlight: "Yoga & Bhoga Narasimha",
+        summary: "A tranquil hill station cloaked in rocky greenery, housing ancient Hoysala-Dravidian Narasimha temples and scenic sunrise viewpoints.",
+        longDesc: "Devarayanadurga, situated at an altitude of 1,204 meters, is a rocky hill station enveloped in dense scrub forests. Named after Mysore Wodeyar King Chikka Devaraja Wodeyar, the hill features two sacred temples: the Bhoga Narasimha at the base and the Yoga Narasimha perched at the summit ridge. It offers breathtaking panoramic vistas of the Tumkur plains and is surrounded by cool mountain breezes.",
+        svgGradient: ["#0f766e", "#115e59", "#134e4a"]
+      },
+      {
+        id: "namada-chilume",
+        name: "Namada Chilume",
+        kannada: "ನಾಮದ ಚಿಲುಮೆ",
+        category: "heritage",
+        categoryLabel: "Heritage & Nature",
+        distance: "14 km from City",
+        elevation: "Natural Spring",
+        highlight: "Sacred Footprint of Rama",
+        summary: "A perennial natural freshwater spring said to have sprouted when Lord Sri Rama shot an arrow into the rock to apply tilaka (nama).",
+        longDesc: "Located near the base of Devarayanadurga, Namada Chilume is a serene natural spring nestled in lush medicinal forest reserves. Legend holds that during Treta Yuga, Lord Rama needed water to apply his 'Nama' (tilak) to his forehead. Lacking water on the dry rock, he shot an arrow; spring water miraculously erupted and has flowed unceasingly ever since. The area also houses a protected deer sanctuary and herbal gardens.",
+        svgGradient: ["#0284c7", "#0369a1", "#075985"]
+      },
+      {
+        id: "siddaganga",
+        name: "Sri Siddaganga Mutt",
+        kannada: "ಶ್ರೀ ಸಿದ್ದಗಂಗಾ ಮಠ",
+        category: "spiritual",
+        categoryLabel: "Sacred & Spiritual",
+        distance: "5 km from City",
+        elevation: "Hill Shrine",
+        highlight: "Trividha Dasohi Memorial",
+        summary: "World-renowned humanitarian monastic pilgrimage offering free food, education, and shelter (Trividha Dasoha) to over 10,000 children.",
+        longDesc: "Founded in the 15th century by Sri Gosala Siddeshwara Swamiji, Sri Siddaganga Mutt is Karnataka's premier humanitarian center. It is sanctified by the samadhi of Dr. Sri Sri Shivakumara Swamiji, who passed away in 2019 at age 111 after spending nearly nine decades educating impoverished children without discrimination of religion, caste, or background.",
+        svgGradient: ["#ea580c", "#c2410c", "#9a3412"]
+      },
+      {
+        id: "madhugiri-fort",
+        name: "Madhugiri Monolith Fort",
+        kannada: "ಮಧುಗಿರಿ ಏಕಶಿಲಾ ಬೆಟ್ಟ",
+        category: "trekking",
+        categoryLabel: "Nature & Trekking",
+        distance: "43 km from City",
+        elevation: "1,198 m (3,930 ft)",
+        highlight: "2nd Largest Asian Monolith",
+        summary: "A monumental single stone monolith crowned by a complex historic hill fort with multi-tiered ramparts built by Raja Hire Gowda and Hyder Ali.",
+        longDesc: "Madhugiri is Asia's second-largest monolithic rock after Savandurga. Rising sharply 3,930 feet above sea level, the slope is a challenging and exhilarating trek. The fort atop features several gateways (dwaras), secret granaries, and water-harvesting cisterns engineered into sheer stone. The summit provides unmatched 360-degree views across Karnataka's Deccan plateau.",
+        svgGradient: ["#475569", "#334155", "#1e293b"]
+      },
+      {
+        id: "siddara-betta",
+        name: "Siddara Betta (Hill of Saints)",
+        kannada: "ಸಿದ್ಧರ ಬೆಟ್ಟ",
+        category: "trekking",
+        categoryLabel: "Nature & Trekking",
+        distance: "32 km from City",
+        elevation: "Medicinal Cave Shrine",
+        highlight: "Ayurvedic Herbs & Caves",
+        summary: "Famed hill renowned for medicinal herbs, subterranean cave temples of Lord Shiva, and natural springs frequented by trekkers and pilgrims.",
+        longDesc: "Siddara Betta translates to 'Hill of the Accomplished Saints' (Siddhas). Ancient lore suggests nine thousand sages meditated here in natural rock chambers. The subterranean cave shrine houses a natural lingam continuously washed by icy cold spring water that is believed to possess potent therapeutic properties. The hills are dense with wild medicinal flora used by Ayurvedic healers.",
+        svgGradient: ["#059669", "#047857", "#065f46"]
+      },
+      {
+        id: "kaidala",
+        name: "Kaidala Chennakeshava Temple",
+        kannada: "ಕೈದಾಳ ಚನ್ನಕೇಶವ ದೇವಾಲಯ",
+        category: "heritage",
+        categoryLabel: "Architecture & Heritage",
+        distance: "9 km from City",
+        elevation: "Hoysala Gem",
+        highlight: "Sculptor Jakanachari Home",
+        summary: "Historic Hoysala-Dravidian stone marvel and the legendary birthplace of celebrated master sculptor Amarashilpi Jakanachari.",
+        longDesc: "Anciently known as Kridapura, Kaidala is sacred in Indian art history. Legend narrates that the master architect Amarashilpi Jakanachari, who carved the sublime Hoysala temples of Belur and Halebidu, had severed his right hand in remorse after a defect was found in an idol. Upon returning to his native village and carving the awe-inspiring idol of Lord Chennakeshava here, his hand was miraculously restored (hence 'Kaidala' — 'Hand Restored').",
+        svgGradient: ["#7c3aed", "#6d28d9", "#5b21b6"]
+      },
+      {
+        id: "pavagada-solar",
+        name: "Pavagada Solar Park (Shakti Sthala)",
+        kannada: "ಪಾವಗಡ ಸೌರ ಉದ್ಯಾನ",
+        category: "modern",
+        categoryLabel: "Modern Marvels",
+        distance: "135 km from City",
+        elevation: "2,050 MW Capacity",
+        highlight: "Global Clean Energy Giant",
+        summary: "Spread across 13,000 acres over five drought-prone villages, it stands as one of the largest operational solar photovoltaic parks in the world.",
+        longDesc: "Named 'Shakti Sthala', the Pavagada Solar Park is an engineering and socioeconomic triumph. Built on leased, semi-arid agricultural land with a generation capacity exceeding 2,050 megawatts, it powers millions of homes and electric grids across Karnataka, turning a historically dry taluk into a global clean-energy powerhouse.",
+        svgGradient: ["#eab308", "#ca8a04", "#a16207"]
+      },
+      {
+        id: "markonahalli",
+        name: "Markonahalli Dam",
+        kannada: "ಮಾರ್ಕೋನಹಳ್ಳಿ ಅಣೆಕಟ್ಟು",
+        category: "modern",
+        categoryLabel: "Modern Marvels",
+        distance: "40 km from City",
+        elevation: "Shimsha River Reservoir",
+        highlight: "Pioneering Siphon Spillway",
+        summary: "An engineering marvel built across the Shimsha river, famous for its automatic siphon spillways designed by Sir M. Visvesvaraya's era engineers.",
+        longDesc: "Built between 1938 and 1940 across the Shimsha River in Kunigal taluk, Markonahalli Dam irrigates thousands of hectares of paddy and coconut lands. The reservoir is internationally recognized by civil engineers for its ingenious automatic siphon system: when water reaches full reservoir level, siphons prime themselves without electricity or mechanical gates, discharging surplus water safely.",
+        svgGradient: ["#2563eb", "#1d4ed8", "#1e40af"]
+      }
+    ];
+
+    // ========================================================================
+    // Data: Interactive Quiz Questions
+    // ========================================================================
+    const QUIZ_DATA = [
+      {
+        question: "Why is Tumakuru district lovingly called 'Kalpataru Nadu' in Karnataka?",
+        options: [
+          "Due to vast gold deposits in the hills",
+          "Because of its thousands of acres of lush, high-yielding coconut groves",
+          "Named after a famous mythological king who lived in Kunigal",
+          "Because of its dense teak and rosewood national forest"
+        ],
+        answerIndex: 1,
+        trivia: "Correct! 'Kalpataru' represents the wish-fulfilling divine coconut tree. Tumakuru (especially Tiptur) is India's premier trade capital for copra and coconuts."
+      },
+      {
+        question: "Padma Bhushan Dr. Sri Sri Shivakumara Swamiji of Siddaganga Mutt was venerated for what holy doctrine?",
+        options: [
+          "Trividha Dasoha (Free Food, Free Education, Free Shelter)",
+          "Constructing the largest gold chariot in southern India",
+          "Authoring 500 Sanskrit epics on the Hoysala dynasty",
+          "Leading agricultural expeditions across the Western Ghats"
+        ],
+        answerIndex: 0,
+        trivia: "Exactly right! Swamiji lived for 111 years in pure selfless dedication, providing daily food, hostel shelter, and schooling to over 10,000 poor and rural students."
+      },
+      {
+        question: "What distinction does the towering Madhugiri hill hold in Asia?",
+        options: [
+          "Highest railway peak in southern India",
+          "Asia's second largest monolithic rock after Savandurga",
+          "The longest naturally occurring marble canyon",
+          "The oldest recorded meteorite crater in the subcontinent"
+        ],
+        answerIndex: 1,
+        trivia: "Spot on! Madhugiri rises 3,930 feet high as a single gigantic monolithic boulder with a multi-layered historic fort built right along the steep incline."
+      },
+      {
+        question: "Which iconic breakfast delicacy is internationally synonymous with Tumkur's highway food trail?",
+        options: [
+          "Benne Dosa with Aloo Palya",
+          "Thatte Idli (plate-sized soft steamed idlis served with butter & spicy coconut chutney)",
+          "Mysore Pak and spicy mixture",
+          "Akki Rotti with brinjal curry"
+        ],
+        answerIndex: 1,
+        trivia: "Deliciously correct! Tumakuru Thatte Idlis are renowned for their saucer size, sponge-like fluffiness, and creamy coconut chutney."
+      }
+    ];
+
+    // ========================================================================
+    // Data: Travel Distance Calculator
+    // ========================================================================
+    const TRANSIT_DATA = {
+      bangalore: {
+        distance: "70 km",
+        time: "1 hr 15m",
+        route: "NH-48 (6-Lane)",
+        tip: "Fast travel via 6-lane expressway from Yeshwantpur/Peenya. Fast MEMU & express trains depart every 30 mins."
+      },
+      airport: {
+        distance: "80 km",
+        time: "1 hr 25m",
+        route: "STRR / Dobbaspet",
+        tip: "Take the Satellite Town Ring Road (STRR) via Devanahalli-Dobbaspet to bypass Bengaluru city traffic seamlessly."
+      },
+      mysuru: {
+        distance: "150 km",
+        time: "2 hr 45m",
+        route: "Kunigal / NH-75",
+        tip: "Scenic drive via Kunigal bypass and Bellur Cross, passing historic Markonahalli reservoir."
+      },
+      chitradurga: {
+        distance: "130 km",
+        time: "1 hr 45m",
+        route: "NH-48 North",
+        tip: "Smooth, continuous 6-lane toll highway connecting northern and central Karnataka."
+      },
+      hubli: {
+        distance: "340 km",
+        time: "4 hr 30m",
+        route: "NH-48 Asian Hwy",
+        tip: "Direct Vande Bharat Express and superfast intercity trains run twice daily in under 4 hours."
+      },
+      shivammoga: {
+        distance: "200 km",
+        time: "3 hr 15m",
+        route: "NH-206 / Tiptur",
+        tip: "Passes through the coconut heartlands of Gubbi, Tiptur, and Arsikere."
+      }
+    };
+
+    // ========================================================================
+    // UI Rendering: Attractions Explorer
+    // ========================================================================
+    const attractionsGrid = document.getElementById("attractions-grid");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const searchInput = document.getElementById("attraction-search");
+
+    let currentFilter = "all";
+    let currentSearch = "";
+
+    function renderAttractions() {
+      const filtered = ATTRACTIONS_DATA.filter(item => {
+        const matchesFilter = (currentFilter === "all") || (item.category === currentFilter);
+        const matchesSearch = item.name.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                              item.kannada.includes(currentSearch) ||
+                              item.summary.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                              item.highlight.toLowerCase().includes(currentSearch.toLowerCase());
+        return matchesFilter && matchesSearch;
+      });
+
+      attractionsGrid.innerHTML = "";
+
+      if (filtered.length === 0) {
+        attractionsGrid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px dashed var(--border-color);">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔍</div>
+            <h3 style="font-family: var(--font-heading); margin-bottom: 0.5rem;">No matching sights found</h3>
+            <p style="color: var(--text-secondary);">Try clearing your search query or choosing another category filter.</p>
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "attraction-card";
+        card.setAttribute("data-id", item.id);
+
+        card.innerHTML = `
+          <div class="card-banner">
+            <svg viewBox="0 0 360 190" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="grad-${item.id}" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="${item.svgGradient[0]}" />
+                  <stop offset="50%" stop-color="${item.svgGradient[1]}" />
+                  <stop offset="100%" stop-color="${item.svgGradient[2]}" />
+                </linearGradient>
+              </defs>
+              <rect width="360" height="190" fill="url(#grad-${item.id})" />
+              <!-- Geometric scenic embellishments -->
+              <circle cx="180" cy="95" r="70" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
+              <circle cx="180" cy="95" r="45" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+              <path d="M0,190 Q90,110 180,140 T360,120 L360,190 Z" fill="rgba(0,0,0,0.3)" />
+              <path d="M0,190 Q120,135 240,165 T360,145 L360,190 Z" fill="rgba(0,0,0,0.4)" />
+              <!-- Icon representation in center -->
+              <text x="180" y="98" font-size="34" text-anchor="middle" dominant-baseline="middle" fill="#fff" opacity="0.9">
+                ${item.category === 'trekking' ? '⛰️' : item.category === 'spiritual' ? '🛕' : item.category === 'heritage' ? '🏛️' : '⚡'}
+              </text>
+            </svg>
+            <span class="badge-category">${item.categoryLabel}</span>
+            <span class="badge-distance">📍 ${item.distance}</span>
+          </div>
+
+          <div class="card-content">
+            <div class="card-title-row">
+              <h3 class="card-title">${item.name}</h3>
+            </div>
+            <div class="card-kannada">${item.kannada}</div>
+            <p class="card-summary">${item.summary}</p>
+            
+            <div class="card-meta-row">
+              <div class="card-meta-item">
+                <span>⭐</span>
+                <span>${item.highlight}</span>
+              </div>
+              <div class="card-btn-action">
+                <span>Details</span>
+                <span>→</span>
+              </div>
+            </div>
+          </div>
+        `;
+
+        card.addEventListener("click", () => openModal(item));
+        attractionsGrid.appendChild(card);
+      });
+    }
+
+    // Filter button listeners
+    filterButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentFilter = btn.dataset.filter;
+        renderAttractions();
+      });
+    });
+
+    // Search input listener
+    searchInput.addEventListener("input", (e) => {
+      currentSearch = e.target.value.trim();
+      renderAttractions();
+    });
+
+    // ========================================================================
+    // Modal View Handler
+    // ========================================================================
+    const modalBackdrop = document.getElementById("attraction-modal");
+    const modalCloseBtn = document.getElementById("modal-close-btn");
+    const modalCloseBottom = document.getElementById("modal-close-bottom");
+
+    function openModal(item) {
+      document.getElementById("modal-category").innerText = item.categoryLabel;
+      document.getElementById("modal-name").innerText = item.name;
+      document.getElementById("modal-kannada").innerText = item.kannada;
+      document.getElementById("modal-dist").innerText = item.distance;
+      document.getElementById("modal-time").innerText = item.elevation;
+      document.getElementById("modal-highlight").innerText = item.highlight;
+      document.getElementById("modal-longDesc" || "modal-long-desc").innerText = item.longDesc;
+
+      const banner = document.getElementById("modal-banner");
+      banner.innerHTML = `
+        <svg viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="modal-grad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="${item.svgGradient[0]}" />
+              <stop offset="100%" stop-color="${item.svgGradient[2]}" />
+            </linearGradient>
+          </defs>
+          <rect width="600" height="240" fill="url(#modal-grad)" />
+          <circle cx="300" cy="120" r="80" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="2" />
+          <path d="M0,240 Q150,140 300,180 T600,150 L600,240 Z" fill="rgba(0,0,0,0.35)" />
+          <text x="300" y="125" font-size="52" text-anchor="middle" dominant-baseline="middle" fill="#fff">
+            ${item.category === 'trekking' ? '⛰️' : item.category === 'spiritual' ? '🛕' : item.category === 'heritage' ? '🏛️' : '⚡'}
+          </text>
+        </svg>
+      `;
+
+      modalBackdrop.classList.add("active");
+      modalBackdrop.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      modalBackdrop.classList.remove("active");
+      modalBackdrop.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "auto";
+    }
+
+    modalCloseBtn.addEventListener("click", closeModal);
+    modalCloseBottom.addEventListener("click", closeModal);
+    modalBackdrop.addEventListener("click", (e) => {
+      if (e.target === modalBackdrop) closeModal();
+    });
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modalBackdrop.classList.contains("active")) {
+        closeModal();
+      }
+    });
+
+    // ========================================================================
+    // Distance Calculator
+    // ========================================================================
+    const citySelect = document.getElementById("city-select");
+    const resDistance = document.getElementById("res-distance");
+    const resTime = document.getElementById("res-time");
+    const resRoute = document.getElementById("res-route");
+    const resTip = document.getElementById("res-tip");
+
+    citySelect.addEventListener("change", (e) => {
+      const selected = TRANSIT_DATA[e.target.value];
+      if (selected) {
+        resDistance.innerText = selected.distance;
+        resTime.innerText = selected.time;
+        resRoute.innerText = selected.route;
+        resTip.innerHTML = `💡 <em>Tip: ${selected.tip}</em>`;
+      }
+    });
+
+    // ========================================================================
+    // Interactive Quiz Engine
+    // ========================================================================
+    let currentQuizIndex = 0;
+    let quizScore = 0;
+    let questionAnswered = false;
+
+    const quizCounter = document.getElementById("quiz-question-counter");
+    const quizScoreDisplay = document.getElementById("quiz-score-display");
+    const quizQuestionText = document.getElementById("quiz-question-text");
+    const quizOptionsContainer = document.getElementById("quiz-options-container");
+    const quizFeedback = document.getElementById("quiz-feedback");
+    const quizNextBtn = document.getElementById("quiz-next-btn");
+    const quizHintText = document.getElementById("quiz-hint-text");
+
+    function loadQuizQuestion() {
+      questionAnswered = false;
+      const q = QUIZ_DATA[currentQuizIndex];
+
+      quizCounter.innerText = `Question ${currentQuizIndex + 1} of ${QUIZ_DATA.length}`;
+      quizScoreDisplay.innerText = `Score: ${quizScore} / ${QUIZ_DATA.length}`;
+      quizQuestionText.innerText = q.question;
+      quizFeedback.innerHTML = "";
+      quizNextBtn.style.display = "none";
+      quizHintText.style.display = "inline";
+
+      quizOptionsContainer.innerHTML = "";
+      q.options.forEach((optText, index) => {
+        const btn = document.createElement("button");
+        btn.className = "quiz-option";
+        btn.innerHTML = `<span style="width:24px; height:24px; border-radius:50%; background:var(--bg-card); display:inline-flex; align-items:center; justify-content:center; font-size:0.8rem; font-weight:700;">${String.fromCharCode(65 + index)}</span> <span>${optText}</span>`;
+        btn.addEventListener("click", () => handleQuizAnswer(index, btn));
+        quizOptionsContainer.appendChild(btn);
+      });
+    }
+
+    function handleQuizAnswer(selectedIndex, clickedBtn) {
+      if (questionAnswered) return;
+      questionAnswered = true;
+
+      const q = QUIZ_DATA[currentQuizIndex];
+      const allOptionButtons = quizOptionsContainer.querySelectorAll(".quiz-option");
+
+      allOptionButtons.forEach(btn => btn.disabled = true);
+
+      if (selectedIndex === q.answerIndex) {
+        clickedBtn.classList.add("correct");
+        quizScore++;
+        quizFeedback.innerHTML = `<span style="color: var(--emerald);">🎉 ${q.trivia}</span>`;
+      } else {
+        clickedBtn.classList.add("incorrect");
+        allOptionButtons[q.answerIndex].classList.add("correct");
+        quizFeedback.innerHTML = `<span style="color: #f87171;">💡 Not quite! ${q.trivia}</span>`;
+      }
+
+      quizScoreDisplay.innerText = `Score: ${quizScore} / ${QUIZ_DATA.length}`;
+      quizHintText.style.display = "none";
+      quizNextBtn.style.display = "inline-flex";
+
+      if (currentQuizIndex === QUIZ_DATA.length - 1) {
+        quizNextBtn.innerText = "Finish Quiz 🏆";
+      } else {
+        quizNextBtn.innerText = "Next Question →";
+      }
+    }
+
+    quizNextBtn.addEventListener("click", () => {
+      if (currentQuizIndex < QUIZ_DATA.length - 1) {
+        currentQuizIndex++;
+        loadQuizQuestion();
+      } else {
+        // Show Final Results
+        quizCounter.innerText = "Quiz Completed";
+        quizQuestionText.innerHTML = `🌟 Congratulations! You scored <strong>${quizScore} out of ${QUIZ_DATA.length}</strong>!`;
+        quizOptionsContainer.innerHTML = `
+          <div style="text-align: center; padding: 2rem; background: var(--bg-secondary); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <div style="font-size: 3rem; margin-bottom: 0.5rem;">${quizScore >= 3 ? '🏆' : '🥥'}</div>
+            <h4 style="font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 0.5rem;">
+              ${quizScore === 4 ? 'True Tumakuru Scholar!' : quizScore >= 2 ? 'Great Knowledge of Kalpataru Nadu!' : 'Ready to explore Tumakuru in person!'}
+            </h4>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+              You have uncovered the rich spirit, geography, food, and people of Karnataka's smart gateway city.
+            </p>
+          </div>
+        `;
+        quizFeedback.innerHTML = "";
+        quizNextBtn.innerText = "Play Again 🔄";
+        quizNextBtn.onclick = () => {
+          currentQuizIndex = 0;
+          quizScore = 0;
+          quizNextBtn.onclick = null;
+          loadQuizQuestion();
+        };
+      }
+    });
+
+    // ========================================================================
+    // Theme Switcher (Dark / Light)
+    // ========================================================================
+    const themeToggleBtn = document.getElementById("theme-toggle");
+    const themeIcon = document.getElementById("theme-icon");
+    const htmlElement = document.documentElement;
+
+    themeToggleBtn.addEventListener("click", () => {
+      const currentTheme = htmlElement.getAttribute("data-theme");
+      const targetTheme = currentTheme === "dark" ? "light" : "dark";
+      htmlElement.setAttribute("data-theme", targetTheme);
+
+      if (targetTheme === "light") {
+        themeIcon.innerHTML = `
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        `;
+      } else {
+        themeIcon.innerHTML = `
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        `;
+      }
+    });
+
+    // Mobile Navigation Menu Toggle
+    const mobileToggle = document.getElementById("mobile-toggle");
+    const navMenu = document.getElementById("nav-menu");
+
+    mobileToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("mobile-open");
+    });
+
+    navMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("mobile-open");
+      });
+    });
+
+    // Set Copyright Year
+    document.getElementById("current-year").innerText = new Date().getFullYear();
+
+    // Initialize Page
+    renderAttractions();
+    loadQuizQuestion();
+  </script>
+</body>
+</html>
